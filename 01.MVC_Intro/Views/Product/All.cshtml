@@ -1,0 +1,33 @@
+﻿@using WebApplicationASPNetDemo.ViewModels.Product;
+@model IEnumerable<ProductViewModel>;
+@{
+    ViewData["Title"] = "All Products";
+}
+    <div class="container-fluid">
+        <div class="row row-cols-4">
+          <form asp-controller="Product" asp-action="All" class="form-inline" method="get">
+            <div class="col mr-sm-2" >
+            <input class="form-control mr-sm-2" type="search" placeholder="keyword" name="keyword">
+            <button class="btn btn-outline-primary my-2 my-sm-2" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+         <div class="row">
+            <div class="col-md-4">
+                   <div class="card" style= "width:18rem">
+                     <div class = "card-header">@ViewData["Title"]</div>
+                </div>
+                <ul class="list-group  list-group-flush" >
+                @foreach (ProductViewModel product in Model)
+                {
+                  <li class="list-group-item"><a asp-controller="Product" asp-action="ById" asp-route-id="@product.Id">Product:@product.Name - Price:@product.Price$</a></li>
+                }
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-outline-primary">Submit</button>
+                   <a  class="btn btn-outline-primary" asp-controller="Product" asp-action="DownloadProductInfo"> Download Products Info</a>
+            </div>
+        </div>
+    </div>
+

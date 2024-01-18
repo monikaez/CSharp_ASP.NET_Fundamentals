@@ -1,0 +1,13 @@
+﻿@using WebApplicationASPNetDemo.ViewModels.Product;
+@model ProductViewModel;
+@{
+    ViewData["Title"] = "Product ById";
+}
+<div class="card">
+    <div class="card-header">@ViewData["Title"]</div>
+    <div class="body">
+        <h5 class="card-title">Product name:@Model.Name</h5>
+        <p class="card-text">Price:@Model.Price$</p>
+    </div>
+</div>
+
