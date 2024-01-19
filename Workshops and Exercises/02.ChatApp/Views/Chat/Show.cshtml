@@ -28,7 +28,9 @@
             <span asp-validation-for="CurrentMessage.MessageText"></span>
         </div>
         <div class="col-4">
+           
             <label>Sender name: </label>
+             <i class="glyphicon glyphicon-user"></i>
             <input asp-for="CurrentMessage.Sender" class="form-control" />
             <input class="btn btn-primary mt-2 float-lg-right" type="submit" value="Send" />
         </div>

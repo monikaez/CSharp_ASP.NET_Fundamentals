@@ -15,4 +15,8 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-size:cover;
+  background-image: url("img/chat1.jpg");
+  background-repeat:no-repeat;
+
 }
